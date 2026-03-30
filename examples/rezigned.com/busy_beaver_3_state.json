@@ -1,0 +1,33 @@
+{
+  "template": [
+    "tapes: 1", 
+    "blank: _", 
+    "comment: #", 
+    "moves: L, R, S", 
+    "multitape_separator: ', '", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ','", 
+    "", 
+    "<current_state>:",
+    "  <current_symbols /> -> <new_symbols />, <directions />, <new_state />"
+  ],
+  "code": [
+    "# Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "# Example from:  https://rezigned.com/tur/", 
+    "", 
+    "name: Busy Beaver 3-State",
+    "init: A", 
+    "accept: halt", 
+    "", 
+    "A:", 
+    "  _ -> 1, R, B", 
+    "  1 -> 1, L, C", 
+    "B:", 
+    "  _ -> 1, L, A", 
+    "  1 -> 1, R, B", 
+    "C:", 
+    "  _ -> 1, L, B", 
+    "  1 -> 1, R, halt", 
+    "halt:"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "template": [
+    "tapes: 1", 
+    "blank: #", 
+    "comment: //", 
+    "moves: L, R, S", 
+    "multitape_separator: ', '", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ','", 
+    "", 
+    "<current_state> <current_symbols /> <new_symbols /> <new_state /> <directions />"
+  ],
+  "code": [
+    "// Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "// Example from:  https://math.hws.edu/eck/js/turing-machine/TM.html", 
+    "", 
+    "// The Binary Increment Turing machine will add one to a binary number and halt. ",
+    "// It must be started on the right end of the number that is to be incremented.",
+    "// When a machine is installed, its description is displayed at the top of the",
+    "// web page, in small type just below the title.  It disappears if the user",
+    "// modifies the machine's rules in any way.  The default is an empty string",
+    "", 
+    "// Example input: 10011111 (start at 7)",
+    "", 
+    "name: Binary increment", 
+    "init: 0", 
+    "accept: h", 
+    "", 
+    "0 # 1 1 R", 
+    "0 0 1 1 R", 
+    "0 1 0 0 L", 
+    "1 # # h L", 
+    "1 0 0 1 R", 
+    "1 1 1 1 R"
+  ]
+}

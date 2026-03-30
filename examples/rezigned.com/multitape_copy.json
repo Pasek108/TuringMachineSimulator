@@ -1,0 +1,36 @@
+{
+  "template": [
+    "tapes: 2", 
+    "blank: _", 
+    "comment: #", 
+    "moves: L, R, S", 
+    "multitape_separator: ', '", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ','", 
+    "", 
+    "<current_state>:",
+    "  <current_symbols /> -> <new_symbols />, <directions />, <new_state />"
+  ],
+  "code": [
+    "# Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "# Example from:  https://rezigned.com/tur/", 
+    "", 
+    "# Example input: abc",
+    "", 
+    "name: Multi-Tape Copy",
+    "init: start", 
+    "accept: halt", 
+    "", 
+    "start:", 
+    "  a, _ -> a, a, R, R, start", 
+    "  b, _ -> b, b, R, R, start", 
+    "  c, _ -> c, c, R, R, start", 
+    "  _, _ -> _, _, L, L, rewind", 
+    "rewind:", 
+    "  a, a -> a, a, L, L, rewind", 
+    "  b, b -> b, b, L, L, rewind", 
+    "  c, c -> c, c, L, L, rewind", 
+    "  _, _ -> _, _, S, S, halt", 
+    "halt:"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "template": [
+    "tapes: 1", 
+    "blank: _", 
+    "comment: ;", 
+    "moves: l, r, *", 
+    "multitape_separator: ','", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ', '", 
+    "", 
+    "<current_state /> <current_symbols /> <new_state /> <new_symbols /> <directions />,"
+  ],
+  "code": [
+    "; Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "; Example from:  https://alistat.eu/online/turingmachinesimulator", 
+    "", 
+    "name: Unary string duplication", 
+    "init: co", 
+    "accept: acc", 
+    "", 
+    "co 1 co1 i r,", 
+    "co1 1 co1 1 r,", 
+    "co1 _ co2 _ r,", 
+    "co2 _ ba 1 l,", 
+    "co2 1 co2 1 r,", 
+    "ba 1 ba 1 l,", 
+    "ba _ ba1 _ l,", 
+    "ba1 1 ba2 1 l,", 
+    "ba2 1 ba2 1 l,", 
+    "ba2 i co i r,", 
+    "ba1 i re 1 l,", 
+    "re i re 1 l,", 
+    "re _ acc _ r,", 
+    "re | acc | r,"
+  ]
+}

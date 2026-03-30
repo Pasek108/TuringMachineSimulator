@@ -1,0 +1,38 @@
+{
+  "template": [
+    "tapes: 2", 
+    "blank: _", 
+    "comment: //", 
+    "moves: Left, Right, Stay", 
+    "multitape_separator: ','", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ', '", 
+    "", 
+    "<current_state /> <new_state /> <current_symbols /> <new_symbols /> <directions />"
+  ],
+  "code": [
+    "// Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "// Example from:  http://turing.hostingasp.pl", 
+    "", 
+    "// Example input: 11011",
+    "", 
+    "name: 2-tapes palindrome checker", 
+    "init: s", 
+    "accept: qAccept", 
+    "", 
+    "s s _,_ _,_ Right,Right",
+    "s s2 0,_ 0,0 Right,Right",
+    "s s2 1,_ 1,1 Right,Right",
+    "s2 q _,_ _,_ Left,Stay",
+    "s2 s2 0,_ 0,0 Right,Right",
+    "s2 s2 1,_ 1,1 Right,Right",
+    "q q 0,_ 0,_ Left,Stay",
+    "q q 1,_ 1,_ Left,Stay",
+    "q p _,_ _,_ Right,Left",
+    "p p 0,0 0,_ Right,Left",
+    "p p 1,1 1,_ Right,Left",
+    "p qReject 0,1 0,1 Stay,Stay",
+    "p qReject 1,0 1,0 Stay,Stay",
+    "p qAccept _,_ _,_ Stay,Stay"
+  ]
+}

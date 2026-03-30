@@ -1,0 +1,41 @@
+{
+  "template": [
+    "tapes: 1", 
+    "blank: ' '", 
+    "comment: #", 
+    "moves: L, R, N", 
+    "multitape_separator: ', '", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ','", 
+    "", 
+    "<current_state*>:",
+    "  <current_symbols* />: {write: <new_symbols />, <directions />: <new_state />}"
+  ],
+  "code": [
+    "# Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "# Example from:  https://turingmachine.io", 
+    "", 
+    "# This is the first example machine given by Alan Turing in his 1936 paper", 
+    "#   \"On Computable Numbers, with an Application to", 
+    "#    the Entscheidungsproblem\".", 
+    "# It simply writes the endless sequence 0 1 0 1 0 1...", 
+    "", 
+    "name: Repeat 0 1", 
+    "init: b", 
+    "accept: z", 
+    "",
+    "b:", 
+    "  ' ': {write: 0, R: c}", 
+    "c:", 
+    "  ' ': {write: ' ', R: e}", 
+    "e:", 
+    "  ' ': {write: 1, R: f}", 
+    "f:", 
+    "  ' ': {write: ' ', R: b}", 
+    "", 
+    "", 
+    "# (Turing uses the convention of leaving a gap after each output cell,", 
+    "# reserving it for marking the cell. For instance, on a tape that", 
+    "# contains '0 1x0 0 1 1y1y0y', x marks the leftmost 1 and y marks 110.)"
+  ]
+}

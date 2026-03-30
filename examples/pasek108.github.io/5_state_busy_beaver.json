@@ -1,0 +1,37 @@
+{
+  "template": [
+    "tapes: 1", 
+    "blank: 0", 
+    "comment: //", 
+    "moves: L, R, N", 
+    "multitape_separator: ', '", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ','", 
+    "", 
+    "<current_state*>:",
+    "  <current_symbols* />: {write: <new_symbols />, <directions />: <new_state />}"
+  ],
+  "code": [
+    "// Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "// Example from:  https://bbchallenge.org/story#interactive-simulator", 
+    "", 
+    "name: 5-state busy beaver", 
+    "init: A", 
+    "accept: E", 
+    "", 
+    "A:", 
+    "  0: {write: 1, R: B}", 
+    "  1: {write: 1, L: C}", 
+    "B:", 
+    "  0: {write: 1, R: C}", 
+    "  1: {write: 1, R: B}", 
+    "C:", 
+    "  0: {write: 1, R: D}", 
+    "  1: {write: 0, L: E}", 
+    "D:", 
+    "  0: {write: 1, L: A}", 
+    "  1: {write: 1, L: D}", 
+    "E:", 
+    "  1: {write: 0, L: A}"
+  ]
+}

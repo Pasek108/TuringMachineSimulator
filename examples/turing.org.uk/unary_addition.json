@@ -1,0 +1,36 @@
+{
+  "template": [
+    "tapes: 1", 
+    "blank: _", 
+    "comment: //", 
+    "moves: L, R, N", 
+    "multitape_separator: ','", 
+    "multislot_bounds: [, ]", 
+    "multislot_separator: ', '", 
+    "", 
+    "<current_state />\t\t<current_symbols />\t\t<new_symbols />\t\t<directions />\t\t<new_state />"
+  ],
+  "code": [
+    "// Transpiled by: https://pasek108.github.io/TuringMachineSimulator", 
+    "// Example from:  https://www.turing.org.uk/book/update/tmjavar.html", 
+    "", 
+    "// Machine is there to illustrate the basic operations.",
+    "// Step through the moves to see how it 'adds' two groups of 1's into a single group.",
+    "// Exmple input: 11_1111111 (start at -1)",
+    "", 
+    "name: Unary addition", 
+    "init: 0", 
+    "accept: stop", 
+    "", 
+    "0\t\t_\t\t_\t\tR\t\t0", 
+    "0\t\t1\t\t1\t\tR\t\t1", 
+    "1\t\t_\t\t1\t\tR\t\t2", 
+    "1\t\t1\t\t1\t\tR\t\t1", 
+    "2\t\t_\t\t_\t\tL\t\t3", 
+    "2\t\t1\t\t1\t\tR\t\t2", 
+    "3\t\t_\t\t_\t\tL\t\t3", 
+    "3\t\t1\t\t_\t\tL\t\t4", 
+    "4\t\t_\t\t_\t\tR\t\tstop", 
+    "4\t\t1\t\t1\t\tL\t\t4"
+  ]
+}
