@@ -22,15 +22,17 @@
 # Overview :sparkles:
 
 ## About
-This project is an advanced, fully functional Turing Machine simulator built as a modern Progressive Web App (PWA). It was developed as an engineering thesis to solve a major limitation in existing educational tools: rigid syntax rules. 
+This project is an advanced, fully functional Turing Machine simulator built as a modern Progressive Web App (PWA). It was developed as an engineering thesis to combine and vastly improve functionalities of existing simulators and solve a major limitation of creating programs: rigid syntax rules. 
 
-Instead of forcing users to adapt to one specific format, this simulator features a custom template system that allows you to define your own syntax, write code in a fully featured editor, and even transpile programs between different syntax styles.
+Instead of forcing users to adapt to one specific format, this simulator features a custom template system that allows you to define your own syntax, transpile programs between different syntax styles and write code in a fast, fully featured IDE with visualization and debugging tools.
 
-Check out the [live version](https://pasek108.github.io/ConnectionGames/).
+Check out the [live version](https://pasek108.github.io/TuringMachineSimulator/).
 
 <br>
 
 ![preview](/_for_readme/preview.png)
+
+## Features
 
 ### ⚙️ Advanced Logic Engine
 * **Multi-Tape Support:** Accurately simulates deterministic multi-tape Turing machines.
@@ -49,22 +51,24 @@ Check out the [live version](https://pasek108.github.io/ConnectionGames/).
 * **PWA & Offline Mode:** Fully installable and runs flawlessly without an internet connection on both desktop and mobile devices.
 * **Theming:** Includes full support for light and dark modes.
 
-## Tech Stack
+## Technologies
+### Core
+- JavaScript + [TypeScript](https://www.typescriptlang.org) 5.9.3
+- CSS + [PostCSS](https://postcss.org) 8.5.6
+- [React](https://react.dev) 19.2.5
+- [Vite](https://vitejs.dev) 7.2.4 + vite-plugin-pwa 1.1.0
+- [Yarn](https://classic.yarnpkg.com/en/) 1.22.22
 
-### **Core**
-* **Framework:** React 19
-* **Language:** TypeScript (v5.9.3) / JavaScript 
-* **Build Tool:** Vite (with PWA plugin) 
+### Functionality
+- [CodeMirror](https://codemirror.net) 6 - code editor
+- [ZenFS](https://github.com/zen-fs) (core 2.4.4, dom 1.2.6) - file system in the browser
+- [fflate](https://github.com/101arrowz/fflate) 0.8.2 - import and export of zip's
+- modified Neo4j-arc (extracted from [Neo4j Browser](https://github.com/neo4j/neo4j-browser)) - graph visualization
 
-### **State & Background Processing**
-* **Multithreading:** Web Workers API
-* **Storage:** IndexedDB 
-* **File System:** ZenFS 
-
-### **UI & Libraries**
-* **Editor:** CodeMirror 6 (with custom `StreamParser` implementation) 
-* **Graphing:** Neo4j-arc
-* **Styling:** CSS / PostCSS
+### UI
+- [React-toastify](https://fkhadra.github.io/react-toastify/introduction/) - toast notifications
+- [Heroicons](https://heroicons.com)
+- [GoogleFonts](https://fonts.google.com)
 
 <br>
 
